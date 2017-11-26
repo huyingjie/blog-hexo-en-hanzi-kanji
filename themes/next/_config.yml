@@ -357,7 +357,7 @@ han: false
 # Disqus
 disqus:
   enable: true
-  shortname: hanzikanjibeauty
+  shortname: http-www-hanzikanji-com
   count: true
 
 # Hypercomments
