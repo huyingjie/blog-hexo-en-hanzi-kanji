@@ -398,8 +398,8 @@
         {### quiz ###}
         {#################}
         {% if post.isquiz %}
-           {% if post.papersummaryurl %}
-            <a href = {{ url_for(post.papersummaryurl) }}> Back to paper summary </a> &nbsp|&nbsp <a href = {{config.gitHub_post_link}}/{{post.filename}}.md target = blank>Add/Edit Questions </a> | <a target = blank href = {{ url_for(config.quiz_tutorial)}} >Tutorial</a>
+           {% if post.tutorialurl %}
+            <a href = {{ url_for(post.tutorialurl) }}> Back to tutorial </a> &nbsp|&nbsp <a href = Check Answer
             {% endif %}
         {% endif %}
 
@@ -419,12 +419,6 @@
             {% else %} Video
             {% endif%} 
 
-              &nbsp→&nbsp           
-            {% if post.ankilink %}
-              <a href = {{ post.ankilink }} target = blank> Import & Review </a>
-            {% else %} Import & Review
-            {% endif%} 
-
               &nbsp&nbsp→&nbsp&nbsp  
             
             {% if post.redditlink %}
@@ -440,6 +434,13 @@
             {% endif%} 
 
               &nbsp&nbsp→&nbsp&nbsp 
+
+            {% if post.checkanswerurl %}
+              <a href = {{ url_for( post.checkanswerurl) }} target = blank>Check Answer</a>
+              {% else %} Check Answer
+            {% endif%} 
+
+              &nbsp&nbsp→&nbsp&nbsp               
 
             {% if post.writingurl %}
               <a href = {{ post.writingurl }} target = blank>Practice writing</a>
@@ -490,33 +491,33 @@
         {% endif %}
 
 
-        {### Join to get weekly updates by email ###}  
+        {### Join to get updates by email ###}  
         <br>
-               <!-- Begin MailChimp Signup Form -->
-                <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+       
 
+                <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
                 <div style="box-shadow: 0 0 2px rgba(0,0,0,0.25) inset; clear: both; padding: 0.5em; border-top: solid 1px #ddd; boder-bottom: solid 1px #ddd; background: rgba(240,220,220,0.25); color: #777; text-align: center">  
-               
                 <style type="text/css">
                   #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
-                  /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-                     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
                 </style>
                 <div id="mc_embed_signup">
-                <form action="https://hanzi-kanji.us17.list-manage.com/subscribe/post?u=c675ce3fca0002aa60681809e&amp;id=176891e9db" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                 <form style="padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" id="mc-embedded-subscribe-form" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=HanziKanji', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
                     <div id="mc_embed_signup_scroll">
-                  <label for="mce-EMAIL">Join to get weekly updates by email</label>
-                  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c675ce3fca0002aa60681809e_176891e9db" tabindex="-1" value=""></div>
-                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                      <label for="mce-EMAIL">Join to get updates by email</label>
+                      <input type="text" name="email" class="email" id="mce-EMAIL" placeholder="email address"/>
+                      <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="hidden" value="HanziKanji" name="uri"/>
+                        <input type="hidden" name="loc" value="en_US"/>  
+                      </div>
+                      <div class="clear">
+                        <input type="submit" value="Subscribe" id="mc-embedded-subscribe" class="button"/>
+                      </div>
                     </div>
-                </form>
-
-                  
+                  </form>
+                </div>
                 </div>
 
-              <!--End mc_embed_signup-->
+              
 
 
 
